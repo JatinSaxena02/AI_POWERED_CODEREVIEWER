@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+*:focus{
+  outline: none;
+}
 
 html,
 body,
@@ -12,9 +15,10 @@ body,
 }
 
 main {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   padding: 1.5rem;
+  flex-direction: row;
   display: flex;
   gap: 1rem;
 }
@@ -27,29 +31,29 @@ main .right {
 }
 
 main .left {
-  background-color: black;
   position: relative;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
 }
 
-.left .code,
-.code pre,
-.code pre code {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  border-radius: 0.7rem;
+.code {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 main .left .review-button {
   position: absolute;
   bottom: 1rem;
+  right: 1rem;
   background-color: dodgerblue;
   padding: 0.5rem 2rem;
   font-weight: 500;
   cursor: pointer;
   user-select: none;
   border-radius: 0.5rem;
-  right: 1rem;
 }
 
 main .right {
@@ -87,5 +91,43 @@ main .right {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.code-editor {
+  font-family: '"Fira code","Fira Mono",monospace';
+  font-size: 25px;
+  border-radius: "5px";
+  height: "100%";
+  width: "100%";
+  overflow: "hidden";
+}
+
+
+/* Media query */
+
+@media (max-width: 425px) {
+  main {
+    height: 100vh;
+    width: 100%;
+    padding: 1.5rem;
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+  }
+
+  main .left,
+  main .right {
+    height: 50%;
+    flex-basis: 50%;
+    border-radius: 0.7rem;
+  }
+  .e
+  main .left{
+    border: none;
+    outline: none;
+  }
+  .code-editor {
+    font-size: 20px;
   }
 }

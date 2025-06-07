@@ -20,7 +20,7 @@ function App() {
 
   async function reviewCode() {
     setloading(true);
-    const res = await axios.post("http://localhost:3000/ai/get-review", {
+    const res = await axios.post(`https://ai-powered-codereviewer.onrender.com/ai/get-review`, {
       code,
     });
     setreview(res.data);
@@ -39,14 +39,7 @@ function App() {
                 prism.highlight(code, prism.languages.javascript, "javascript")
               }
               padding={10}
-              style={{
-                fontFamily: '"Fira code","Fira Mono",monospace',
-                fontSize: 12,
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                height: "100%",
-                width: "100%",
-              }}
+              className="code-editor"
             />
           </div>
           <div onClick={reviewCode} className="review-button">
