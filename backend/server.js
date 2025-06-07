@@ -1,6 +1,6 @@
-require('dotenv').config()
-const app =require('./src/app')
+require("dotenv").config();
+const app = require("./src/app");
 
-app.listen(3000,()=>{
-    console.log("server is running at 3000")
-})
+app.listen(3000, () => {
+  console.log("server is running at 3000");
+});

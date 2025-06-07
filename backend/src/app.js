@@ -1,9 +1,9 @@
 const express =require('express')
 const aiRoutes=require("./routes/ai.routes")
-const cors =require('cors')
 const app= express()
-app.use(cors())
+const cors =require('cors')
 app.use(express.json())
+app.use(cors())
 
 app.get('/',(req,res)=>{
     res.send('Hello world')
@@ -12,3 +12,4 @@ app.get('/',(req,res)=>{
 
 app.use('/ai',aiRoutes)
 module.exports=app
+

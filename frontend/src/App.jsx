@@ -20,9 +20,12 @@ function App() {
 
   async function reviewCode() {
     setloading(true);
-    const res = await axios.post(`https://ai-powered-codereviewer.onrender.com/ai/get-review`, {
-      code,
-    });
+    const res = await axios.post(
+      `https://ai-powered-codereviewer.onrender.com/ai/get-review`,
+      {
+        code,
+      },
+    );
     setreview(res.data);
     setloading(false);
   }
